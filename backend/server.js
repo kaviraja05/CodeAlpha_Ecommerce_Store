@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const path = require('path'); 
 const connectDB = require('./config/db');
 
 // Import routes
@@ -36,6 +37,14 @@ app.get('/', (req, res) => {
   });
 });
 
+// ✅ Serve frontend (after APIs)
+app.use(express.static(path.join(__dirname, '../frontend-vanilla')));
+
+// ✅ Fallback for all non-API routes → load frontend
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend-vanilla/index.html'));
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -43,9 +52,9 @@ app.use((err, req, res, next) => {
 });
 
 // 404 handler
-app.use('*', (req, res) => {
-  res.status(404).json({ message: 'Route not found' });
-});
+//app.use('*', (req, res) => {
+//  res.status(404).json({ message: 'Route not found' });
+//});
 
 // Start server
 const PORT = process.env.PORT || 5000;

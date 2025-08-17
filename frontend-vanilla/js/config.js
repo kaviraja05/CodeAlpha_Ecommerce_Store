@@ -1,3 +1,5 @@
+const API_BASE_URL = "https://REPLACE_ME.onrender.com"; // temporary
+export default API_BASE_URL;
 // Configuration
 const CONFIG = {
     API_BASE_URL: 'http://localhost:5001/api',

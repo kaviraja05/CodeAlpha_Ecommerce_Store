@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://REPLACE_ME.onrender.com"; // temporary
+const API_BASE_URL = "https://techsphere-site.onrender.com"; // temporary
 export default API_BASE_URL;
 // Configuration
 const CONFIG = {

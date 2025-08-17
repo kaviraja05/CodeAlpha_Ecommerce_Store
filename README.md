@@ -2,6 +2,11 @@
 
 A modern, full-stack ecommerce web application built with vanilla HTML, CSS, JavaScript frontend and Express.js backend with MongoDB database. Your premier destination for cutting-edge technology and premium digital lifestyle products.
 
+## Demo Video
+
+[Watch Demo Video]([https://drive.google.com/file/d/1U501NyzsZlsHPqz9X9Mf_Viuy521syEc/view?usp=sharing
+])
+
 ## 🚀 Features
 
 ### ✅ Core Functionality

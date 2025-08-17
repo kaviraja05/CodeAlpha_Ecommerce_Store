@@ -18,8 +18,13 @@ const app = express();
 connectDB();
 
 // Middlewares
-app.use(cors());
+//app.use(cors());
 app.use(express.json());
+
+app.use(cors({
+  origin: ["https://techsphere-web.netlify.app/"], // your exact Netlify URL
+  credentials: false
+}));
 
 // Routes
 app.use('/api/products', productRoutes);

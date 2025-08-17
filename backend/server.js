@@ -22,7 +22,7 @@ connectDB();
 app.use(express.json());
 
 app.use(cors({
-  origin: ["https://techsphere-web.netlify.app/"], // your exact Netlify URL
+  origin: ["https://techsphere-store.netlify.app"], // your exact Netlify URL
   credentials: false
 }));
 

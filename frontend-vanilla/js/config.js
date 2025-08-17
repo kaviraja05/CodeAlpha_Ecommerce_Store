@@ -1,8 +1,8 @@
-const API_BASE_URL = "https://techsphere-site.onrender.com"; // temporary
-export default API_BASE_URL;
+//const API_BASE_URL = "https://techsphere-site.onrender.com"; // temporary
+//export default API_BASE_URL;
 // Configuration
 const CONFIG = {
-    API_BASE_URL: 'http://localhost:5001/api',
+    API_BASE_URL: 'https://techsphere-site.onrender.com/api',
     STORAGE_KEYS: {
         AUTH_TOKEN: 'ecommerce_auth_token',
         USER_DATA: 'ecommerce_user_data',

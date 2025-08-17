@@ -1,26 +1,56 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const connectDB = require('./config/db'); // ✅ MongoDB connection
-const productRoutes = require('./routes/productRoutes'); // ✅ Our route
+const connectDB = require('./config/db');
+
+// Import routes
+const productRoutes = require('./routes/productRoutes');
+const authRoutes = require('./routes/authRoutes');
+const cartRoutes = require('./routes/cartRoutes');
+const orderRoutes = require('./routes/orderRoutes');
 
 dotenv.config();
 
 const app = express();
-connectDB(); // ✅ Connect to DB
+
+// Connect to database
+connectDB();
 
 // Middlewares
 app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/products', productRoutes);  // ✅ Add this line to connect the route
+app.use('/api/products', productRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/orders', orderRoutes);
 
 // Default route
 app.get('/', (req, res) => {
-  res.send('API is running...');
+  res.json({
+    message: '🌐 TechSphere API is running...',
+    version: '1.0.0',
+    status: 'active',
+    description: 'Premium Tech Marketplace API'
+  });
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: 'Something went wrong!' });
+});
+
+// 404 handler
+app.use('*', (req, res) => {
+  res.status(404).json({ message: 'Route not found' });
 });
 
 // Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`📱 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`🌐 API URL: http://localhost:${PORT}`);
+});

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechSphere - Your premier destination for cutting-edge technology and premium digital lifestyle products. Shop smartphones, laptops, tablets, audio, wearables, gaming, and accessories.">
+    <meta name="keywords" content="technology, electronics, smartphones, laptops, tablets, audio, gaming, premium tech, digital lifestyle">
+    <title>TechSphere - Premium Tech Marketplace</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>"
+</head>
+<body>
+    <!-- App Preloader -->
+    <div id="app-preloader" class="app-preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <i class="fas fa-globe"></i>
+                <span>TechSphere</span>
+            </div>
+            <div class="preloader-spinner"></div>
+            <p>Loading your premium tech marketplace...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-globe"></i>
+                <span>TechSphere</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#" class="nav-link" data-page="home">Home</a>
+                <a href="#" class="nav-link" data-page="products">Products</a>
+                <div class="nav-cart">
+                    <a href="#" class="nav-link cart-link" data-page="cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                <div class="nav-auth">
+                    <a href="#" class="nav-link auth-link" data-page="login">Login</a>
+                    <a href="#" class="nav-link auth-link" data-page="register">Register</a>
+                    <div class="user-menu" style="display: none;">
+                        <span class="user-name"></span>
+                        <button class="logout-btn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <div id="home-page" class="page active">
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-badge">🌐 Premium Tech Marketplace</div>
+                    <h1>Welcome to TechSphere</h1>
+                    <p>Your premier destination for cutting-edge technology and premium digital lifestyle products</p>
+                    <button class="cta-button" onclick="showPage('products')">Explore Collection</button>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <div class="container">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <h3>Free Shipping</h3>
+                            <p>Free shipping on orders over $100 with fast delivery worldwide</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Secure Payment</h3>
+                            <p>Your payment information is processed securely with industry-standard encryption</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>24/7 Support</h3>
+                            <p>Our customer support team is available around the clock to assist you</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <h3>Easy Returns</h3>
+                            <p>30-day return policy with hassle-free returns and exchanges</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-products">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Featured Products</h2>
+                        <p>Handpicked items from our premium collection</p>
+                    </div>
+                    <div id="featured-products-grid" class="products-grid">
+                        <!-- Featured products will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Section -->
+            <section class="newsletter-section">
+                <div class="container">
+                    <div class="newsletter-content">
+                        <h2>Join the TechSphere Community</h2>
+                        <p>Subscribe to our newsletter for exclusive tech deals, product launches, and insider updates</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Enter your email address" class="newsletter-input">
+                            <button class="newsletter-btn">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Products Page -->
+        <div id="products-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <div class="page-title">
+                        <h1>TechSphere Collection</h1>
+                        <p>Discover our carefully curated selection of premium technology products</p>
+                    </div>
+                    <div class="search-filter">
+                        <input type="text" id="search-input" placeholder="Search our collection...">
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="Smartphones">📱 Smartphones</option>
+                            <option value="Laptops">💻 Laptops</option>
+                            <option value="Tablets">📱 Tablets</option>
+                            <option value="Audio">🎧 Audio</option>
+                            <option value="Wearables">⌚ Wearables</option>
+                            <option value="Gaming">🎮 Gaming</option>
+
+                        </select>
+                        <select id="sort-select">
+                            <option value="">Sort by</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="products-grid" class="products-grid">
+                    <!-- Products will be loaded here -->
+                </div>
+                <div id="loading" class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading premium products...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Detail Page -->
+        <div id="product-detail-page" class="page">
+            <div class="container">
+                <button class="back-button" onclick="showPage('products')">
+                    <i class="fas fa-arrow-left"></i> Back to Products
+                </button>
+                <div id="product-detail" class="product-detail">
+                    <!-- Product detail will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Page -->
+        <div id="cart-page" class="page">
+            <div class="container">
+                <h1>Shopping Cart</h1>
+                <div id="cart-content" class="cart-content">
+                    <!-- Cart items will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Page -->
+        <div id="login-page" class="page">
+            <div class="auth-container">
+                <div class="auth-form">
+                    <h2>Login</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="auth-button">Login</button>
+                    </form>
+                    <p class="auth-switch">
+                        Don't have an account?
+                        <a href="#" onclick="showPage('register')">Register here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Page -->
+        <div id="register-page" class="page">
+            <div class="auth-container">
+                <div class="auth-form">
+                    <h2>Register</h2>
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="register-name">Full Name</label>
+                            <input type="text" id="register-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <input type="email" id="register-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" required>
+                        </div>
+                        <button type="submit" class="auth-button">Register</button>
+                    </form>
+                    <p class="auth-switch">
+                        Already have an account?
+                        <a href="#" onclick="showPage('login')">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkout Page -->
+        <div id="checkout-page" class="page">
+            <div class="container">
+                <h1>Checkout</h1>
+                <div class="checkout-content">
+                    <div class="checkout-form">
+                        <h3>Shipping Information</h3>
+                        <form id="checkout-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="checkout-name">Full Name</label>
+                                    <input type="text" id="checkout-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkout-phone">Phone</label>
+                                    <input type="tel" id="checkout-phone">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout-address">Address</label>
+                                <input type="text" id="checkout-address" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="checkout-city">City</label>
+                                    <input type="text" id="checkout-city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkout-state">State</label>
+                                    <input type="text" id="checkout-state" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkout-zip">Zip Code</label>
+                                    <input type="text" id="checkout-zip" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="payment-method">Payment Method</label>
+                                <select id="payment-method" required>
+                                    <option value="Cash on Delivery">Cash on Delivery</option>
+                                    <option value="Credit Card">Credit Card</option>
+                                    <option value="PayPal">PayPal</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="checkout-button">Place Order</button>
+                        </form>
+                    </div>
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <div id="checkout-summary">
+                            <!-- Order summary will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-globe"></i>
+                        <span>TechSphere</span>
+                    </div>
+                    <p>Your premier destination for cutting-edge technology and premium digital lifestyle products worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" onclick="showPage('products')">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> support@techsphere.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Commerce St, City, State 12345</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechSphere. All rights reserved. | Built with ❤️ for CodeAlpha Internship</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

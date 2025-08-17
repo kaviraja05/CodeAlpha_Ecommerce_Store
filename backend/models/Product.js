@@ -14,6 +14,12 @@ const productSchema = new mongoose.Schema({
   countInStock: {
     type: Number,
     required: true
+  },
+  category: {
+    type: String,
+    required: true,
+    enum: ['Smartphones', 'Laptops', 'Tablets', 'Audio', 'Wearables', 'Gaming', 'Accessories'],
+    default: 'Accessories'
   }
 }, {
   timestamps: true

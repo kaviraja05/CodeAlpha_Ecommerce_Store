@@ -22,7 +22,7 @@ const allowedOrigins = [
   "http://localhost:3000",   // React dev server
   "http://localhost:5173",   // Vite dev server
   "http://127.0.0.1:5500",   // vanilla JS testing
-  "https://techsphere-store.netlify.app", // Netlify deployed frontend
+  "https://techsphere-store-r37ffta9i-kaviraja05s-projects.vercel.app", // Netlify deployed frontend
 ];
 
 // ✅ CORS setup
